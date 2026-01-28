@@ -1,36 +1,48 @@
 var computerMove, playerMove, playerInput;
-var randomNumber = Math.floor(Math.random() * 3 + 1)
+var randomNumber = Math.floor(Math.random() * 3 + 1).toString();
+console.log("Wylosowana liczba: " + randomNumber);
 
-if(randomNumber == 1) {
-    computerMove = "kamień"
-}
-else if(randomNumber == 2) {
-    computerMove = "papier"
-}
-else if(randomNumber == 3){
-    computerMove = "nożyce"
-}
-else {
-    computerMove = 'nieznany ruch';
-}
-
-playerInput = prompt("Wybierz swój ruch! 1: kamień, 2: papier, 3: nożyce.")
-console.log("Wpisana odpowiedź to: " + playerInput)
-
-switch(playerInput) {
-    case '1': 
-        playerMove = "kamień"
-        break;
-    case '2': 
-        playerMove = "papier"
-        break;
-    case '3':
-        playerMove = "nożyce"
-        break;
-    default:
-        printMessage("Brak wybranej opcji!")
-        playerMove = "kamień"
+function getMoveName(move){
+    switch(move) {
+        case '1':
+            return "kamień";
+        case '2':
+            return "papier";
+        case '3':
+            return "nożyce";
+        default:
+            printMessage("Brak wybranej opcji! Zakładam, że chodziło ci o 'kamień'.");
+            return "kamień";
+    }
 }
 
-printMessage('Zagrałem ' + computerMove + '! Jeśli Twój ruch to papier, to wygrywasz!');
-printMessage('Zagrałem ' + playerMove);
+function displayResult(movePlayer, moveComputer){
+    if (movePlayer == "papier" && moveComputer == "kamień"){
+        printMessage("Wygrywasz!");
+    }
+    else if (movePlayer == "kamień" && moveComputer == "nożyce"){
+        printMessage("Wygrywasz!");
+    }
+    else if (movePlayer == "nożyce" && moveComputer == "papier"){
+        printMessage("Wygrywasz!");
+    }
+    else if (moveComputer == movePlayer) {
+        printMessage("Remis!");
+    }
+    else {
+        printMessage("Przegrywasz!");
+    }
+    
+    printMessage("Zagrałem " + moveComputer + ", a ty " + movePlayer)
+}
+
+playerInput = prompt("Wybierz swój ruch! 1: kamień, 2: papier, 3: nożyce.");
+console.log("Wpisana odpowiedź to: " + playerInput);
+
+playerMove = getMoveName(playerInput);
+console.log("Ruch gracza: " + playerMove);
+
+computerMove = getMoveName(randomNumber);
+console.log("Ruch komputera: " + computerMove)
+
+displayResult(playerMove, computerMove)
