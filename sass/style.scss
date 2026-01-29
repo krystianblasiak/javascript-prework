@@ -51,11 +51,13 @@ header {
             border: 2px solid #EA2027;
             font-size: 20px;
             color: white;
-            box-shadow: 2px 2px 10px 3px #EA2027;
+            box-shadow: 2px 2px 10px 5px #EA2027;
         }
 
         button:hover {
-            background-color: #EA2027;
+            background-color: #0652DD;
+            border: 2px solid #0652DD;
+            box-shadow: 2px 2px 10px 5px #0652DD;
         }
 
         .information {
