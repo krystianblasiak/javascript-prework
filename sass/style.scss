@@ -35,13 +35,43 @@ header {
     background-size: cover;
     background-attachment: fixed;
     height: 75vh;
-    position: relative;
-    .container {
-        position: absolute;
-        top: 50%;
-        left: 50%;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+
+    .box-1 {
+        flex: 35%;
+        margin: 100px;
+        margin-left: 30px;
+        padding: 25px;
         color: white;
-        transform: translate(-50%, -50%);
+        background-color: rgba(#EA2027, 0.3);
+        box-shadow: 2px 2px 25px 2px #EA2027;
+        border-radius: 35px;
+        h1 {
+            font-size: 35px;
+        }
+
+        h3 {
+            font-size: 20px;
+        }
+
+        p {
+            font-size: 20px;
+        }
+
+        ul {
+            text-align: left;
+            list-style-type: circle;
+            font-size: 20px;
+        }
+    }
+
+    .box-2 {
+        flex: 65%;
+        margin-top: 220px;
+        margin-right: 30px;
+        color: white;
         button {
             width: 125px;
             height: 50px;
