@@ -1,4 +1,4 @@
-var computerMove, playerMove, playerInput, randomNumber;
+var computerMove, playerMove, playerInput, randomNumber, resultComputer = 0, resultPlayer = 0;
 var argButtonName, buttonPaper, buttonRock, buttonScissors, buttonTest;
 
 function getMoveName(move){
@@ -18,21 +18,32 @@ function getMoveName(move){
 function displayResult(movePlayer, moveComputer){
     if (movePlayer == "papier" && moveComputer == "kamień"){
         printMessage("Wygrywasz!");
+        resultPlayer += 1;
     }
     else if (movePlayer == "kamień" && moveComputer == "nożyce"){
         printMessage("Wygrywasz!");
+        resultPlayer += 1;
     }
     else if (movePlayer == "nożyce" && moveComputer == "papier"){
         printMessage("Wygrywasz!");
+        resultPlayer += 1;
     }
     else if (moveComputer == movePlayer) {
         printMessage("Remis!");
     }
     else {
         printMessage("Przegrywasz!");
+        resultComputer += 1;
     }
     
     printMessage("Zagrałem " + moveComputer + ", a ty " + movePlayer)
+}
+
+function results(computerResult, playerResult){
+    document.getElementById("result").innerHTML = '';
+    var h2Result = document.createElement("h2");
+    h2Result.innerHTML = "Gracz " + playerResult + " : " + computerResult + " Komputer";
+    document.getElementById("result").appendChild(h2Result);
 }
 
 function buttonClicked(argButtonName) {
@@ -45,6 +56,8 @@ function buttonClicked(argButtonName) {
     computerMove = getMoveName(randomNumber);
     console.log("Ruch komputera: " + computerMove)
     displayResult(playerMove, computerMove)
+    console.log("Wynik komputera: " + resultComputer + ", wynik gracza: " + resultPlayer);
+    results(resultComputer, resultPlayer);
 }
 
 ButtonRock = buttonRock = document.getElementById('button-rock');
