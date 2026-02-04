@@ -1,5 +1,5 @@
 var computerMove, playerMove, playerInput, randomNumber, resultComputer = 0, resultPlayer = 0;
-var argButtonName, buttonPaper, buttonRock, buttonScissors, buttonTest;
+var argButtonName;
 
 function getMoveName(move){
     switch(move) {
@@ -60,9 +60,9 @@ function buttonClicked(argButtonName) {
     results(resultComputer, resultPlayer);
 }
 
-ButtonRock = buttonRock = document.getElementById('button-rock');
-buttonPaper = document.getElementById('button-paper');
-buttonScissors = document.getElementById('button-scissors');
+let buttonRock = document.getElementById('button-rock'),
+    buttonPaper = document.getElementById('button-paper'),
+    buttonScissors = document.getElementById('button-scissors');
 
 buttonRock.addEventListener('click', function(){ buttonClicked('kamień'); });
 buttonPaper.addEventListener('click', function(){ buttonClicked('papier'); });
