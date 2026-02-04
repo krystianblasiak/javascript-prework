@@ -59,7 +59,7 @@ function buttonClicked(argButtonName) {
     results();
 }
 
-let buttonRock = document.getElementById('button-rock'),
+const buttonRock = document.getElementById('button-rock'),
     buttonPaper = document.getElementById('button-paper'),
     buttonScissors = document.getElementById('button-scissors');
 
