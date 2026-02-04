@@ -41,7 +41,7 @@ function displayResult(movePlayer, moveComputer){
 
 function results(computerResult, playerResult){
     document.getElementById("result").innerHTML = '';
-    var h2Result = document.createElement("h2");
+    const h2Result = document.createElement("h2");
     h2Result.innerHTML = "Gracz " + playerResult + " : " + computerResult + " Komputer";
     document.getElementById("result").appendChild(h2Result);
 }
