@@ -1,4 +1,4 @@
-var playerInput, resultComputer = 0, resultPlayer = 0;
+let resultComputer = 0, resultPlayer = 0;
 
 function getMoveName(move){
     switch(move) {
