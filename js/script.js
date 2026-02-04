@@ -38,10 +38,10 @@ function displayResult(movePlayer, moveComputer){
     printMessage("Zagrałem " + moveComputer + ", a ty " + movePlayer)
 }
 
-function results(computerResult, playerResult){
+function results(){
     document.getElementById("result").innerHTML = '';
     const h2Result = document.createElement("h2");
-    h2Result.innerHTML = "Gracz " + playerResult + " : " + computerResult + " Komputer";
+    h2Result.innerHTML = "Gracz " + resultPlayer + " : " + resultComputer + " Komputer";
     document.getElementById("result").appendChild(h2Result);
 }
 
@@ -56,7 +56,7 @@ function buttonClicked(argButtonName) {
     console.log("Ruch komputera: " + computerMove)
     displayResult(playerMove, computerMove)
     console.log("Wynik komputera: " + resultComputer + ", wynik gracza: " + resultPlayer);
-    results(resultComputer, resultPlayer);
+    results();
 }
 
 let buttonRock = document.getElementById('button-rock'),
