@@ -1,5 +1,4 @@
-var computerMove, playerMove, playerInput, randomNumber, resultComputer = 0, resultPlayer = 0;
-var argButtonName;
+var playerInput, randomNumber, resultComputer = 0, resultPlayer = 0;
 
 function getMoveName(move){
     switch(move) {
@@ -52,8 +51,8 @@ function buttonClicked(argButtonName) {
     randomNumber = Math.floor(Math.random() * 3 + 1).toString();
     console.log("Wylosowana liczba: " + randomNumber);
 
-    playerMove = argButtonName;
-    computerMove = getMoveName(randomNumber);
+    let playerMove = argButtonName, computerMove = getMoveName(randomNumber);
+
     console.log("Ruch komputera: " + computerMove)
     displayResult(playerMove, computerMove)
     console.log("Wynik komputera: " + resultComputer + ", wynik gracza: " + resultPlayer);
